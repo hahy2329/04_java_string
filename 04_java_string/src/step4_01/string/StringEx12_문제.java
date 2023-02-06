@@ -53,7 +53,10 @@ public class StringEx12_문제 {
 			System.out.print("메뉴 선택 : ");
 			int sel = scan.nextInt();
 			
-			if		(sel == 1) {}
+			if		(sel == 1) {
+				
+				
+			}
 			else if (sel == 2) {}
 			else if (sel == 3) {}
 			else if (sel == 4) {}
