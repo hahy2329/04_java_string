@@ -1,4 +1,3 @@
-
 package step4_01.string;
 
 import java.util.Scanner;
@@ -24,13 +23,13 @@ import java.util.Scanner;
 
 
 
-public class StringEx11_풀이 {
+public class StringEx11_풀이2 {
 
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		String[][] items = new String[100][2];
+		String[][] items = new String[100][2]; //2칸 짜리가 100줄있다.
 		for(int i = 0; i < items.length; i++) {
 			items[i][0] = "";
 			items[i][1] = "";
@@ -44,47 +43,44 @@ public class StringEx11_풀이 {
 			System.out.println("[1]카테고리 관리");
 			System.out.println("[2]아 이 템  관리");
 			System.out.println("[3]전체품목 출력");
+			System.out.println("[4]종료");
 			
 			System.out.print(": ");
 			int sel = scan.nextInt();
 			
 			if	    (sel == 1) {
-				System.out.println("추가할 카테고리 입력: ");
+				System.out.println("카테고리에 넣을 단어를 입력해주세요: ");
 				String category = scan.next();
 				
 				items[itemCount][0] = category;
 				itemCount++;
-				
-				
 				
 			}
 			else if (sel == 2) {
 				for (int i = 0; i < itemCount; i++) {
 					System.out.println("["+i+"]" + items[i][0]);
 				}
-					System.out.println("카테고리를 선택하세요: ");
-					int choice = scan.nextInt();
-					
-					System.out.println("추가할 아이템을 입력하세요: ");
-					String item = scan.next();
-					
-					items[choice][1] += item;
-					items[choice][1] += "/";
-					
-					
-					
-					
-					
-			
+				
+				System.out.println("카테고리를 선택해주세요: ");
+				int choice = scan.nextInt();
+				
+				System.out.println("아이템을 입력해주세요: ");
+				String userNum = scan.next();
+				
+				items[choice][1] += userNum;
+				items[choice][1] += "/";
 				
 			}
 			else if (sel == 3) {
 				for (int i = 0; i < itemCount; i++) {
-					System.out.println(items[i][0] + " : " + items[i][1]);
-					
+					System.out.println(items[i][0] + ": " + items[i][1]);
 				}
 				
-				
+			}
+			
+			else if(sel ==4) {
+				System.out.println("종료");
+				break;
 			}
 			
 		}
