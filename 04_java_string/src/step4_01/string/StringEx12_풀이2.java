@@ -65,25 +65,23 @@ public class StringEx12_풀이2 {
 				for (int i = 0; i < ids.length; i++) {
 					if(ids[i].equals(userID) && pws[i].equals(userPW)) {
 						identifier = i;
-						
 					}
-					
 				}
 				
 				if(identifier == -1) {
 					System.out.println("ID와 PW를 확인해주세요.");
+					
 				}
 				else {
 					System.out.println(ids[identifier]+"님 환영합니다.");
 				}
 				
+				
+				
 			}
 			else if (sel == 2) {
 				identifier = -1;
-				
 				System.out.println("정상적으로 로그아웃 되었습니다.");
-				
-				
 			}
 			else if (sel == 3) {
 				if(identifier == -1) {
@@ -94,29 +92,27 @@ public class StringEx12_풀이2 {
 				while(true) {
 					System.out.println("상품목록");
 					for (int i = 0; i < items.length; i++) {
-						System.out.print("["+(i+1)+"]"+ items[i] + " ");
-						
+						System.out.print("["+(i+1)+"]" +": " + items[i]+" ");
 					}
 					System.out.println("[4]뒤로가기");
 					
-					System.out.println("상품번호를 선택하세요: ");
-					
+					System.out.println("아이템을 선택해주세요: ");
 					int choice = scan.nextInt();
 					
 					if(choice == 4) {
 						break;
 					}
-					
 					jang[count][0] = identifier;
 					jang[count][1] = choice;
 					
 					count++;
+					
 				}
 				
 			}
 			else if (sel == 4) {
-				if(identifier !=-1) {
-					System.out.println("id: "+ ids[identifier]);
+				if(identifier != -1) {
+					System.out.println("id: " + ids[identifier] );
 				}
 				
 				int apple = 0;
@@ -129,19 +125,18 @@ public class StringEx12_풀이2 {
 							apple++;
 						}
 						
-						else if(jang[i][1] == 2) {
+						else if(jang[i][1]==2) {
 							banana++;
 						}
-						else if(jang[i][1] ==3 ) {
+						else if(jang[i][1]==3) {
 							berry++;
 						}
 					}
-					System.out.println(items[0] + ": " + apple +"개");
-					System.out.println(items[1] + ": " + banana +"개");
-					System.out.println(items[2] + ": " + berry +"개");
-					
 				}
 				
+				System.out.println(items[0] + ": "+apple+"개");
+				System.out.println(items[1] + ": "+banana+"개");
+				System.out.println(items[2] + ": "+berry+"개");
 				
 			}
 			else if (sel == 0) {
